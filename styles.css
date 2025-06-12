@@ -1,0 +1,402 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.5rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #777;
+  font-size: 1rem;
+}
+
+.nav a:hover {
+  color: #f15e50;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-image {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.feature-text {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.feature-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00001a;
+  flex: 1;
+}
+
+.feature-description {
+  flex: 1;
+}
+
+.feature-description p {
+  color: #5a5a5a;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #f15e50;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.sidebar {
+  background-color: #00001a;
+  color: white;
+  padding: 2rem;
+}
+
+.sidebar-title {
+  color: #e9ab53;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.news-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.news-item h3:hover {
+  color: #e9ab53;
+}
+
+.news-item p {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.articles {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.article-card {
+  display: flex;
+  gap: 1rem;
+  max-width: 350px;
+}
+
+.article-card img {
+  width: 100px;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c5c6ce;
+}
+
+.card-text h3 {
+  font-size: 1rem;
+  color: #00001a;
+  margin: 0.25rem 0;
+}
+
+.card-text p {
+  font-size: 0.9rem;
+  color: #5a5a5a;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #5a5a5a;
+  margin: 1.5rem 0;
+}
+/* Mobile Nav (already covered earlier, just ensure it's there) */
+/* ... previous mobile nav CSS ... */
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.modal-close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* MOBILE NAV STYLES */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 75%;
+  height: 100%;
+  background-color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-nav.active {
+  right: 0;
+}
+
+.mobile-nav .close-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-nav li a {
+  text-decoration: none;
+  color: #00001a;
+  font-size: 1.2rem;
+}
+
+.mobile-nav li a:hover {
+  color: #f15e50;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-text {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .articles {
+    flex-direction: column;
+  }
+
+  .article-card {
+    flex-direction: row;
+    max-width: 100%;
+  }
+
+  .header {
+    padding-bottom: 1rem;
+  }
+
+  .sidebar {
+    margin-top: 2rem;
+  }
+
+  .feature-text h1 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+.card-number {
+  color: #f15e50;
+  cursor: pointer;
+}
+.card-number:hover {
+  color: #0aa1dd; /* cool blue on hover */
+}
+
+.card-number:active {
+  color: #007f73; /* deep teal when clicked */
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+}
+
+/* Responsive nav */
+.nav {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    display: none;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+.mkuu {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mkuu:hover {
+  color: #f15e50;
+}
+.btn {
+  background-color: #f15e50;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(8, 8, 8);
+  color: #ffffff;
+  border: 2px solid #f15e50;
+}
